@@ -3,16 +3,12 @@
 3    vector<string> fizzBuzz(int n) {
 4        vector<string> v;
 5        for (int i = 1; i <= n; i++) {
-6            if (i % 3 == 0 && i % 5 == 0)
-7                v.push_back("FizzBuzz");
-8            else if (i % 3 == 0)
-9                v.push_back("Fizz");
-10            else if (i % 5 == 0)
-11                v.push_back("Buzz");
-12            else
-13                v.push_back(to_string(i));
-14        }
-15
-16        return v;
-17    }
-18};
+6            v.push_back((i % 15 == 0)  ? "FizzBuzz"
+7                        : (i % 5 == 0) ? "Buzz"
+8                        : (i % 3 == 0) ? "Fizz"
+9                                       : to_string(i));
+10        }
+11
+12        return v;
+13    }
+14};
